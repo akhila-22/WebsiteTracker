@@ -31,7 +31,7 @@ public class Main {
                view.show(website);
                if(code!= website.getStatus())
                {
-                 /* Thread thread1 = new Thread(() -> {
+                 Thread thread1 = new Thread(() -> {
                       try {
                           c.updatecurrentstatus(code,website);
                       } catch (SQLException e) {
@@ -45,20 +45,20 @@ public class Main {
                        } catch (SQLException e) {
                            throw new RuntimeException(e);
                        }
-                   });*/
+                   });
 
-                   long startTime = System.nanoTime();
+                   /*long startTime = System.nanoTime();
                    c.updatecurrentstatus(code,website);
-                   c.updatestatuslog(code,website);
-                   /*thread1.start();
+                   c.updatestatuslog(code,website);*/
+                   thread1.start();
                    thread2.start();
                    thread1.join();
-                   thread2.join();*/
-                   long endTime = System.nanoTime();
+                   thread2.join();
+                  /* long endTime = System.nanoTime();
                    long runtimeInNanos = endTime - startTime;
                    runtimeInSeconds += (double) runtimeInNanos / 1_000_000_000.0;
 
-                   System.out.println("Runtime: " + runtimeInSeconds + " seconds");
+                   System.out.println("Runtime: " + runtimeInSeconds + " seconds");*/
 
                }
                else {
